@@ -1,85 +1,46 @@
-public class U3L3Runner
-{
-    public static void main(String[] args)
-    {
-        // here is some that will run right away, just to play around
-        // (make sure to compile both your Cat and Cathouse classes first!)
-        Cat daisy = new Cat("Daisy", 3);
-        Cat eleanor = new Cat("Eleanor", 8);
+import java.util.Scanner;
+    public class U3L3Runner {
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("You are on an island surrounded by water.\nThere is a path to the woods to the north, the sea to the south, and a beach shack to the east. \nWhich way do you want to go (n,e,s,w)?");
+            String command = scan.nextLine();
 
-        CatHouse cats = new CatHouse(daisy, eleanor, "Max");
+            if (command.equals("n"))
+            {
+                System.out.println("You enter the forest and hear some rustling.\nThere may be tigers here or maybe it's just monkeys.");
+                System.out.println("Do you want to continue?");
+                String choice = scan.nextLine();
+                /* add nested if statements for possible next actions! */
+                if (choice.equals("yes"))
+                {
+                    System.out.println("It was just monkeys.");
+                }
+            }
 
-        // print CatHouse info
-        System.out.println(cats);
+            // Add else-ifs for s, e, and an else for any other input. Be creative!
+            else if (command.equals("s"))
+            {
+                System.out.println("You enter the beach, with the sea in front of you.\nThere appears to be something in the water.\nDo you want to continue?");
+                String choice = scan.nextLine();
+                if (choice.equals("yes"))
+                {
+                    System.out.println("It is a giant shark!");
+                }
 
-        cats.rollCall();
+                }
+            else if (command.equals("e"))
+            {
+                System.out.println("You see a beach shack.\nDo you want to enter?");
+                String choice = scan.nextLine();
+                if (choice.equals("yes"))
+                {
+                    System.out.println("You enter and order a refreshing drink.");
+                }
 
-        // HERE IS TEST CODE; UNCOMMENT WHEN YOU NEED IT!
- /*
-    // ------- Test set 1 -------
-    Cat garfield = new Cat("Garfield", 5);
-    Cat crookshanks = new Cat("Crookshanks", 6);
+            }
 
-    CatHouse myCats = new CatHouse(garfield, crookshanks, "Mr. Das");
-
-    // print CatHouse info
-    System.out.println(myCats);
-
-    // older cat, Crookshanks, speaks first!
-    myCats.rollCall();
-
-    // cat1 then cat2 each says a random thing
-    myCats.catNoise();
-
-    System.out.println("----------------------------");
-
-    // ------- Test set 2 -------
-    Cat toby = new Cat("Toby", 10);
-    Cat ziggy = new Cat("Ziggy", 8);
-
-    CatHouse yourCats = new CatHouse(toby, ziggy, "Alex");
-
-    // print CatHouse info
-    System.out.println(yourCats);
-
-    // older cat, Toby, speaks first!
-    yourCats.rollCall();
-
-    yourCats.catNoise();
-
-    System.out.println("----------------------------");
-
-    // ------- Test set 3 -------
-    Cat katie = new Cat("Katie", 12);
-    Cat billy = new Cat("Billy", 12);
-
-    CatHouse neighborsCats = new CatHouse(katie, billy, "Ms. Thompson");
-
-    // print CatHouse info
-    System.out.println(neighborsCats);
-
-    // same age, so Billy speaks first because B before K
-    neighborsCats.rollCall();
-
-    neighborsCats.catNoise();
-
-    System.out.println("----------------------------");
-
-    // ------- Test set 4 -------
-    Cat autumn1 = new Cat("Autumn", 15);
-    Cat autumn2 = new Cat("Autumn", 15);
-
-    CatHouse sameCats = new CatHouse(autumn1, autumn2, "ASPCA");
-
-    // print CatHouse info
-    System.out.println(sameCats);
-
-    // same age, same name, so autumn1 speaks first...
-    // although you can't really tell :p
-    sameCats.rollCall();
-
-    sameCats.catNoise();
-
-    */
+            System.out.println("End of adventure!");
+        }
     }
-}
+
+
